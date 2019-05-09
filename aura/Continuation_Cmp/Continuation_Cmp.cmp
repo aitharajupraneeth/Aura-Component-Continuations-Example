@@ -1,0 +1,142 @@
+<aura:component controller="ContinuationHandler_AC" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="candidateList" type="List" />
+    <aura:attribute name="customerList" type="List" />
+    <aura:attribute name="studentList" type="List" />
+    
+    <lightning:card>
+        <center> <lightning:button variant="success" onclick="{!c.callContinuation}" iconName="utility:apex_plugin" label="Make a Continuation Call"  /></center> <br/>
+        <lightning:layout verticalAlign="stretch" multipleRows="true" class="x-large">
+            <lightning:layoutItem flexibility="auto" padding="around-small" class="custom-box">
+                <center><lightning:badge label="Candidate Data"/></center><br/>
+                <p class="slds-p-horizontal_small">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="Name">Name</div>
+                                </th>
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="Country">Country</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.candidateList}" var="con">
+                                <tr>
+                                    <td>
+                                        <div class="slds-truncate" title="{!con.Name}">
+                                            <lightning:formattedText value="{!con.Name}" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate" title="{!con.Country}">
+                                            <lightning:formattedText value="{!con.Country}" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table> 
+                </p>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small" class="custom-box">
+                <center><lightning:badge label="Customer Data"/></center><br/>
+                <p class="slds-p-horizontal_small">
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="Name">Name</div>
+                                </th>
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="Country">Country</div>
+                                </th>
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="City">City</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.customerList}" var="con">
+                                <tr>
+                                    <td>
+                                        <div class="slds-truncate" title="{!con.Name}">
+                                            <lightning:formattedText value="{!con.Name}" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate" title="{!con.Country}">
+                                            <lightning:formattedText value="{!con.Country}" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate" title="{!con.City}">
+                                            <lightning:formattedText value="{!con.City}" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table> 
+                </p>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small" class="custom-box">
+                <center><lightning:badge label="Student Data"/></center><br/>
+                <p class="slds-p-horizontal_small">
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="Name">Name</div>
+                                </th>
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="Email">Email</div>
+                                </th>
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="Email">AccNumber</div>
+                                </th>
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="Email">Source</div>
+                                </th>
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="Email">Site</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.studentList}" var="con">
+                                <tr>
+                                    <td>
+                                        <div class="slds-truncate" title="{!con.Name}">
+                                            <lightning:formattedText value="{!con.Name}" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate" title="{!con.Email}">
+                                            <lightning:formattedText value="{!con.Email}" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate" title="{!con.AccNumber}">
+                                            <lightning:formattedText value="{!con.AccNumber}" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate" title="{!con.Source}">
+                                            <lightning:formattedText value="{!con.Source}" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate" title="{!con.Site}">
+                                            <lightning:formattedText value="{!con.Site}" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table> 
+                </p>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </lightning:card>
+</aura:component>
